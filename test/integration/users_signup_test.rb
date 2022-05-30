@@ -16,16 +16,29 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div.field_with_errors' #<CSS class for field with error>
   end
 
+  #  I think this should be in the users_login_test.rb
+  # test "login with valid information" do
+  #   get login_path
+  #   post login_path, params: { session: { email:    @user.email,
+  #                                         password: 'password' } }
+  #   assert_redirected_to @user
+  #   follow_redirect!
+  #   assert_template 'users/show'
+  #   assert_select "a[href=?]", login_path, count: 0
+  #   assert_select "a[href=?]", logout_path
+  #   assert_select "a[href=?]", user_path(@user)
+  # end
+
   test "valid signup information" do
     get signup_path
     assert_difference 'User.count', 1 do
-      post users_path, params: { user: { name:  "Example",
-                                         email: "example@working.com",
+      post users_path, params: { user: { name:  "Example User",
+                                         email: "user@example.com",
                                          password:              "password",
                                          password_confirmation: "password" } }
     end
     follow_redirect!
     assert_template 'users/show'
-    assert_not flash.empty?
-end
+    assert is_logged_in?
+  end
 end
