@@ -22,11 +22,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_activation(@user).deliver_now
       puts @user.email
-      if @user.errors.any?
-        @user.errors.messages.each do |msg|
-          puts msg
-        end
-      end
+
       flash[:info] = "Please check your email to activate your account"
       redirect_to root_url
       #reset_session 
@@ -35,6 +31,11 @@ class UsersController < ApplicationController
       #handle a successful save
       #redirect_to @user
     else
+      if @user.errors.any?
+        @user.errors.messages.each do |msg|
+          puts msg
+        end
+      end
       render 'new', status: :unprocessable_entity
    end
   end
