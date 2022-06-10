@@ -18,10 +18,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    puts @user
+   
     if @user.save
-      puts @user
       UserMailer.account_activation(@user).deliver_now
+      puts @user.email
+      if @user.errors.any?
+        @user.errors.messages.each do |msg|
+          puts msg
+        end
+      end
       flash[:info] = "Please check your email to activate your account"
       redirect_to root_url
       #reset_session 
