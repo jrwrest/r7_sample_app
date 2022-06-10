@@ -10,7 +10,7 @@ class User < ApplicationRecord
     has_secure_password
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
  # Returns the hash digest of the given string.
- def User.digest(string)
+  def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
@@ -44,18 +44,16 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-private
+  private
 
-  # Converts email to all lowercase.
-  def downcase_email
-    email.downcase!
-  end  
+    # Converts email to all lowercase.
+    def downcase_email
+      email.downcase!
+    end  
 
-  # Creates and assigns the activation token and digest
-  def create_activation_digest
-    self.activation_token = User.new_token
-    self.activation_digest = User.digest(activation_token)
-  end 
-
-
+    # Creates and assigns the activation token and digest
+    def create_activation_digest
+      self.activation_token = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end 
 end
