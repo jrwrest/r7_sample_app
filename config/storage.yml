@@ -5,7 +5,7 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
-#from rails book...
+#from rails book...take 2
 amazon:
 service: S3
 access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
