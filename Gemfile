@@ -5,7 +5,7 @@ ruby "3.1.2"
 
 gem "rails",          "7.0.3"
 gem "image_processing", "1.12.2"
-#gem 'active_storage_validations', '0.8.9'
+gem 'active_storage_validations', '0.8.9'
 gem 'bcrypt',         '3.1.18'
 gem 'faker',          '2.21.0'
 gem 'will_paginate',           '3.3.1'
