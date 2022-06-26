@@ -1,19 +1,12 @@
-# Create a main sample user.
+# Users
 User.create!(name:  "Example User",
     email: "example@railstutorial.org",
     password:              "foobar",
-    password_confirmation: "foobar"
-)
-
-User.create!(name:  "James",
-    email: "james@anandavibetribe.com",
-    password:              "123456",
-    password_confirmation: "123456",
-    admin: true,
+    password_confirmation: "foobar",
+    admin:     true,
     activated: true,
     activated_at: Time.zone.now)
 
-# Generate a bunch of additional users.
 99.times do |n|
 name  = Faker::Name.name
 email = "example-#{n+1}@railstutorial.org"
@@ -26,10 +19,10 @@ User.create!(name:  name,
       activated_at: Time.zone.now)
 end
 
-# Generate micoroposts for a sub-set of users.
-
+# Microposts
 users = User.order(:created_at).take(6)
 50.times do
+<<<<<<< HEAD
     content = Faker::Lorem.sentence(word_count: 5)
     users.each { |user| user.microposts.create!(content: content) }
 end
@@ -44,3 +37,16 @@ following.each { |followed| user.follow(followed) }
 followers.each   { |follower| follower.follow(user)}
 
 
+=======
+content = Faker::Lorem.sentence(5)
+users.each { |user| user.microposts.create!(content: content) }
+end
+
+# Create following relationships.
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
+>>>>>>> followingv2

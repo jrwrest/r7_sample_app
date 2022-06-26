@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require "test_helper"
+=======
+require 'test_helper'
+>>>>>>> followingv2
 
 class RelationshipTest < ActiveSupport::TestCase
 
@@ -20,5 +24,4 @@ class RelationshipTest < ActiveSupport::TestCase
     @relationship.followed_id = nil
     assert_not @relationship.valid?
   end
-  
 end

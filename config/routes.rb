@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+<<<<<<< HEAD
   resources :users do 
     member do # creates /users/1/following and /users/1/followers
+=======
+  resources :users do
+    member do
+>>>>>>> followingv2
       get :following, :followers
     end
   end
