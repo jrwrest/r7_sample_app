@@ -76,11 +76,7 @@ GEM
     ansi (1.5.0)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
-<<<<<<< HEAD
-    bcrypt (3.1.18)
-=======
     bcrypt (3.1.13)
->>>>>>> followingv2
     bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
@@ -294,15 +290,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-<<<<<<< HEAD
-  active_storage_validations (= 0.9.8)
-  bcrypt (= 3.1.18)
-  bootsnap (= 1.12)
-=======
   active_storage_validations (= 0.8.9)
   bcrypt (= 3.1.13)
   bootsnap (= 1.11.1)
->>>>>>> followingv2
   bootstrap-sass (= 3.4.1)
   bootstrap-will_paginate (= 1.0.0)
   capybara (= 3.36.0)

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-require "test_helper"
-=======
 require 'test_helper'
->>>>>>> followingv2
 
 class RelationshipTest < ActiveSupport::TestCase
 

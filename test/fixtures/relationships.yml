@@ -1,14 +1,6 @@
 one:
   follower: michael
   followed: lana
-<<<<<<< HEAD
-two:
-  follower: michael
-  followed: malory
-three:
-  follower: lana
-  followed: michael
-=======
 
 two:
   follower: michael
@@ -18,7 +10,6 @@ three:
   follower: lana
   followed: michael
 
->>>>>>> followingv2
 four:
   follower: archer
   followed: michael
